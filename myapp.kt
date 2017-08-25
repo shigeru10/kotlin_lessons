@@ -16,6 +16,20 @@ Hello world
 class User(var name: String) { // コンストラクタ引数
   /*var name = "Me!"*/
   var team = "red"
+
+  // getter
+  /*get() {
+    return field.toUpperCase()
+  }*/
+  get() = field.toUpperCase()
+
+  //setter
+  set(value) {
+    if (value != "") {
+      field = value
+    }
+  }
+
   init {
     println("instance created: name: $name, team: $team")
   }
@@ -26,6 +40,9 @@ class User(var name: String) { // コンストラクタ引数
 
 fun main(args: Array<String>) {
   val user: User = User("tom") // インスタンス
-  println(user.name)
-  user.sayHi()
+  println(user.team)
+  user.team = "blue"
+  println(user.team)
+  user.team = ""
+  println(user.team)
 }
