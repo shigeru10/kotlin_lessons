@@ -9,23 +9,18 @@ Hello world
 */
 
 fun main(args: Array<String>) {
-  // when
-  val num = 3
+  // while
 
-  when (num) {
-    0 -> println("Zero")
-    1 -> println("One")
-    2, 3 -> println("Two or Three")
-    in 4..10 -> println("Many")
-    else -> println("other")
+  var i = 0
+
+  while (i < 10) {
+    println("loop: $i")
+    i++
   }
 
-  // 変数にも代入できる
-  val result = when (num) {
-    0 -> "Zero"
-    1 -> "One"
-    2, 3 -> "Two or Three"
-    in 4..10 -> "Many"
-    else -> "other"
-  }
+  // あと判定なので、最初の一回は条件に関係なく実行される
+  do {
+    println("loop: $i")
+    i++
+  } while(i < 10)
 }
