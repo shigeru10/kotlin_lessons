@@ -13,15 +13,19 @@ Hello world
 // - fun: method
 
 
-class User {
-  var name = "Me!"
+class User(var name: String) { // コンストラクタ引数
+  /*var name = "Me!"*/
+  var team = "red"
+  init {
+    println("instance created: name: $name, team: $team")
+  }
   fun sayHi() {
     print("hi, $name")
   }
 }
 
 fun main(args: Array<String>) {
-  val user: User = User() // インスタンス
+  val user: User = User("tom") // インスタンス
   println(user.name)
   user.sayHi()
 }
