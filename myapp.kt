@@ -9,17 +9,23 @@ Hello world
 */
 
 fun main(args: Array<String>) {
-  // if
-  val score = 85
+  // when
+  val num = 3
 
-  if (score > 80) {
-    println("great")
-  } else if (score > 60) {
-    println("good")
-  } else {
-    println("soso ...")
+  when (num) {
+    0 -> println("Zero")
+    1 -> println("One")
+    2, 3 -> println("Two or Three")
+    in 4..10 -> println("Many")
+    else -> println("other")
   }
 
-  // 三項演算子のようにかける
-  val result = if (score > 80) "Great" else "soso ..."
+  // 変数にも代入できる
+  val result = when (num) {
+    0 -> "Zero"
+    1 -> "One"
+    2, 3 -> "Two or Three"
+    in 4..10 -> "Many"
+    else -> "other"
+  }
 }
