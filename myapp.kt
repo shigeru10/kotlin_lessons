@@ -8,12 +8,22 @@ Hello world
 ➜  kotlin_lessons
 */
 
-// Class
-// - data: property
-// - fun: method
 
+// 継承
+// User -> AdminUser
 
-class User(var name: String) { // コンストラクタ引数
+class AdminUser(name: String): User(name) {
+  fun sayHello() {
+    print("hello, $name")
+  }
+
+  override fun sayHi() {
+    print("hi, $name")
+  }
+
+}
+
+open class User(var name: String) { // コンストラクタ引数
   /*var name = "Me!"*/
   var team = "red"
 
@@ -33,16 +43,13 @@ class User(var name: String) { // コンストラクタ引数
   init {
     println("instance created: name: $name, team: $team")
   }
-  fun sayHi() {
+   open fun sayHi() {
     print("hi, $name")
   }
 }
 
 fun main(args: Array<String>) {
-  val user: User = User("tom") // インスタンス
-  println(user.team)
-  user.team = "blue"
-  println(user.team)
-  user.team = ""
-  println(user.team)
+  val adminUser = AdminUser("tom") // インスタンス
+  adminUser.sayHello()
+  adminUser.sayHi()
 }
