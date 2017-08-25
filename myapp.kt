@@ -8,12 +8,15 @@ Hello world
 ➜  kotlin_lessons
 */
 
-fun sayHi(name: String = "taguchi", age:Int = 23) {
-  println("hi! $name ($age)")
-}
+
+/*fun sayHi(): String {
+  return "hi!"
+}*/
+
+// 一行の時は、式のように書ける
+fun sayHi() = "hi!"
 
 fun main(args: Array<String>) {
-  sayHi()
-  sayHi("Tom", 22)
-  sayHi(age = 19, name = "steve")
+  val msg = sayHi()
+  println(msg)
 }
