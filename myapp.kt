@@ -10,18 +10,18 @@ Hello world
 
 fun main(args: Array<String>) {
 
-  val msg: String = "Hello world" // 文字列型
-  val c: Char = 'a' // <- 文字型
+  val x = 10
+  println(x / 3) // 3
+  println(x / 3.0) // 3.33333333...
+  println(x % 3) // 1
 
-  // Byte, Short, Int, Long
-  val i: Int = 100
-  val i: Long = 5555555555555555L // <- 終わりに'L'をつける
+  var y = 5
+  y++
+  println(y)
 
-  // Float, Double
-  val d: Double = 234.234
-  val f: Float = 12.234F // <- 終わりに'F'をつける
+  var z = 4
+  z += 12
 
-  // Boolean
-  val flag: Boolean = true
-
+  val flag = true
+  println(!flag)
 }
