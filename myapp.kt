@@ -8,15 +8,12 @@ Hello world
 ➜  kotlin_lessons
 */
 
+fun sayHi(name: String = "taguchi", age:Int = 23) {
+  println("hi! $name ($age)")
+}
+
 fun main(args: Array<String>) {
-  // for
-
-  // break
-  // continue
-
-  for (i in 0..9) {
-    if (i == 5) break
-    if (i == 3) continue
-    println(i)
-  }
+  sayHi()
+  sayHi("Tom", 22)
+  sayHi(age = 19, name = "steve")
 }
