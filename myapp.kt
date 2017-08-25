@@ -9,5 +9,8 @@ Hello world
 */
 
 fun main(args: Array<String>) {
-  println("Hello world")
+
+  /*val -> 変更不可, var -> 変更可能*/
+  val msg: String = "Hello world" // 型は省略可能
+  println(msg)
 }
