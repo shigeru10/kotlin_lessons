@@ -9,18 +9,14 @@ Hello world
 */
 
 fun main(args: Array<String>) {
-  // while
+  // for
 
-  var i = 0
+  // break
+  // continue
 
-  while (i < 10) {
-    println("loop: $i")
-    i++
+  for (i in 0..9) {
+    if (i == 5) break
+    if (i == 3) continue
+    println(i)
   }
-
-  // あと判定なので、最初の一回は条件に関係なく実行される
-  do {
-    println("loop: $i")
-    i++
-  } while(i < 10)
 }
