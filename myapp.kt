@@ -9,13 +9,17 @@ Hello world
 */
 
 fun main(args: Array<String>) {
-  // 文字列の連結
-  println("aaaaaa" + "vbbbbbbbb")
+  // if
+  val score = 85
 
-  val name = "aaaaaaaa"
-  println("$name")
+  if (score > 80) {
+    println("great")
+  } else if (score > 60) {
+    println("good")
+  } else {
+    println("soso ...")
+  }
 
-  println("${12 + 13}")
-
-  println("hello\n world")
+  // 三項演算子のようにかける
+  val result = if (score > 80) "Great" else "soso ..."
 }
