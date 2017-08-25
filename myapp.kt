@@ -9,19 +9,13 @@ Hello world
 */
 
 fun main(args: Array<String>) {
+  // 文字列の連結
+  println("aaaaaa" + "vbbbbbbbb")
 
-  val x = 10
-  println(x / 3) // 3
-  println(x / 3.0) // 3.33333333...
-  println(x % 3) // 1
+  val name = "aaaaaaaa"
+  println("$name")
 
-  var y = 5
-  y++
-  println(y)
+  println("${12 + 13}")
 
-  var z = 4
-  z += 12
-
-  val flag = true
-  println(!flag)
+  println("hello\n world")
 }
