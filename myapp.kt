@@ -10,7 +10,18 @@ Hello world
 
 fun main(args: Array<String>) {
 
-  /*val -> 変更不可, var -> 変更可能*/
-  val msg: String = "Hello world" // 型は省略可能
-  println(msg)
+  val msg: String = "Hello world" // 文字列型
+  val c: Char = 'a' // <- 文字型
+
+  // Byte, Short, Int, Long
+  val i: Int = 100
+  val i: Long = 5555555555555555L // <- 終わりに'L'をつける
+
+  // Float, Double
+  val d: Double = 234.234
+  val f: Float = 12.234F // <- 終わりに'F'をつける
+
+  // Boolean
+  val flag: Boolean = true
+
 }
