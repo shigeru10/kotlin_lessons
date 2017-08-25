@@ -8,15 +8,20 @@ Hello world
 ➜  kotlin_lessons
 */
 
+// Class
+// - data: property
+// - fun: method
 
-/*fun sayHi(): String {
-  return "hi!"
-}*/
 
-// 一行の時は、式のように書ける
-fun sayHi() = "hi!"
+class User {
+  var name = "Me!"
+  fun sayHi() {
+    print("hi, $name")
+  }
+}
 
 fun main(args: Array<String>) {
-  val msg = sayHi()
-  println(msg)
+  val user: User = User() // インスタンス
+  println(user.name)
+  user.sayHi()
 }
