@@ -8,28 +8,29 @@ Hello world
 ➜  kotlin_lessons
 */
 
-// 拡張
-fun User.sayHello() {
-  println("hello, $name")
+// 抽象クラス -> 具象クラス
+// User -> Japanese, American
+
+abstract class User {
+  abstract fun sayHi()
 }
 
-fun User.sayHi() {
-  println("[ext] hi, $name")
+class Japanese: User() {
+  override fun sayHi() {
+    println("こんにちは！")
+  }
 }
 
-val User.myName: String
-  get() = "I am $name"
-
-class User(var name: String) { // コンストラクタ引数
-  fun sayHi() {
-    println("hi, $name")
+class American: User() {
+  override fun sayHi() {
+    println("Hi!")
   }
 }
 
 fun main(args: Array<String>) {
-  val tom = User("tom") // インスタンス
+  val japanese = Japanese()
+  val american = American()
 
-  tom.sayHello() // hello, tom
-  tom.sayHi() // hi, tom
-  println(tom.myName) // I am tom
+  japanese.sayHi()
+  american.sayHi()
 }
