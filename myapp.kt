@@ -9,8 +9,10 @@ Hello world
 */
 
 
-// 継承
-// User -> AdminUser
+// アクセス修飾子
+// - public　どこからでも
+// - protected そのクラス + サブクラス
+// - private そのクラス
 
 class AdminUser(name: String): User(name) {
   fun sayHello() {
@@ -23,7 +25,9 @@ class AdminUser(name: String): User(name) {
 
 }
 
-open class User(var name: String) { // コンストラクタ引数
+/*open class User(public var name: String) { // コンストラクタ引数*/
+/*open class User(protected var name: String) { // コンストラクタ引数*/
+open class User(private var name: String) { // コンストラクタ引数
   /*var name = "Me!"*/
   var team = "red"
 
