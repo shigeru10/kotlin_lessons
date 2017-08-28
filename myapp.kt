@@ -8,52 +8,28 @@ Hello world
 ➜  kotlin_lessons
 */
 
-
-// アクセス修飾子
-// - public　どこからでも
-// - protected そのクラス + サブクラス
-// - private そのクラス
-
-class AdminUser(name: String): User(name) {
-  fun sayHello() {
-    print("hello, $name")
-  }
-
-  override fun sayHi() {
-    print("hi, $name")
-  }
-
+// 拡張
+fun User.sayHello() {
+  println("hello, $name")
 }
 
-/*open class User(public var name: String) { // コンストラクタ引数*/
-/*open class User(protected var name: String) { // コンストラクタ引数*/
-open class User(private var name: String) { // コンストラクタ引数
-  /*var name = "Me!"*/
-  var team = "red"
+fun User.sayHi() {
+  println("[ext] hi, $name")
+}
 
-  // getter
-  /*get() {
-    return field.toUpperCase()
-  }*/
-  get() = field.toUpperCase()
+val User.myName: String
+  get() = "I am $name"
 
-  //setter
-  set(value) {
-    if (value != "") {
-      field = value
-    }
-  }
-
-  init {
-    println("instance created: name: $name, team: $team")
-  }
-   open fun sayHi() {
-    print("hi, $name")
+class User(var name: String) { // コンストラクタ引数
+  fun sayHi() {
+    println("hi, $name")
   }
 }
 
 fun main(args: Array<String>) {
-  val adminUser = AdminUser("tom") // インスタンス
-  adminUser.sayHello()
-  adminUser.sayHi()
+  val tom = User("tom") // インスタンス
+
+  tom.sayHello() // hello, tom
+  tom.sayHi() // hi, tom
+  println(tom.myName) // I am tom
 }
