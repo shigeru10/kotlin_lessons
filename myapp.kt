@@ -8,20 +8,22 @@ Hello world
 ➜  kotlin_lessons
 */
 
-// data class
-// データを保持するだけのクラスにはdataをつける
+// Collection
 
-/*class Point(val x: Int, val y: Int)*/
-data class Point(val x: Int, val y: Int)
+/*
+- List(Immutable/Mutable) -> 順番をもつデータの集合
+- Set(Immutable/Mutable)  -> 順番を持たない、重複しない集合
+- Map(Immutable/Mutable)  -> キーと値でデータを管理していく集合
+*/
 
 fun main(args: Array<String>) {
-  val p1 = Point(3, 5)
-  val p2 = p1.copy()
-  /*val p2 = Point(3, 5)*/
+  /*val sales: List<Int> = listOf(20, 30, 40)*/
+  val sales = mutableListOf(20, 30, 40) // mutableの場合、型つけるとエラー
+  println(sales[1])
+  sales[1] = 50
+  println(sales.size)
+  for (sale in sales) {
+    println(sale)
+  }
 
-  println(p1)
-  println(if (p1 == p2) "same" else "not same")
-
-  val (x,y) = p1
-  println("$x:$y")
 }
