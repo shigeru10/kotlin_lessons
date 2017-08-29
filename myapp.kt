@@ -17,18 +17,12 @@ Hello world
 */
 
 fun main(args: Array<String>) {
-  /*val answers: Set<Int> = setOf(2, 3, 4, 2)*/
-  /*val answers = setOf(2, 3, 4, 2)*/
-  val answers = mutableSetOf(2, 3, 4, 2)
-  answers.add(5)
-  answers.remove(4)
-  println(answers)
-  println(answers.contains(3)) // true
-
-  val set1 = setOf(1, 3, 5, 8)
-  val set2 = setOf(3, 5, 8, 9)
-
-  println(set1.intersect(set2))
-  println(set1.union(set2))
-  println(set1.subtract(set2))
+  /*val users: Map<String, Int> = mapOf("a" to 40, "b" to 80)*/
+  /*val users = mapOf("a" to 40, "b" to 80)*/
+  val users = mutableMapOf("a" to 40, "b" to 80)
+  users["a"] = 60
+  println(users.size)
+  println(users.keys)
+  println(users.values)
+  println(users.entries)
 }
