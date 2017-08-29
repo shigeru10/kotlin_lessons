@@ -8,31 +8,31 @@ Hello world
 ➜  kotlin_lessons
 */
 
+// generics
+// 引数の型を決めなくて良い。汎用化できる。
 
-// Interface
-// delegateのようなもの, classに複数適用可能
+/*class MyInteger {
+  fun getThree(x: Int) {
+    println(x)
+    println(x)
+    println(x)
+  }
+}*/
 
-interface Sharable {
-  // 抽象プロパティ
-  val version: Double
-  // 抽象メソッド
-  fun share()
-  // メソッド
-  fun getInfo() {
-    println("Share I/F ($version)")
+class MyData<T> {
+  fun getThree(x: T) {
+    println(x)
+    println(x)
+    println(x)
   }
 }
-
-class User: Sharable {
-  override val version = 1.1
-  override fun share() {
-    println("Sharing...")
-  }
-}
-
 
 fun main(args: Array<String>) {
-  val user = User()
-  user.share()
-  user.getInfo()
+  /*val mi = MyInteger()
+  mi.getThree(55)*/
+
+  val i = MyData<Int>()
+  i.getThree(4)
+  val s = MyData<String>()
+  s.getThree("hi")
 }
