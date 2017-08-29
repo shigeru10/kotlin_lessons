@@ -17,13 +17,18 @@ Hello world
 */
 
 fun main(args: Array<String>) {
-  /*val sales: List<Int> = listOf(20, 30, 40)*/
-  val sales = mutableListOf(20, 30, 40) // mutableの場合、型つけるとエラー
-  println(sales[1])
-  sales[1] = 50
-  println(sales.size)
-  for (sale in sales) {
-    println(sale)
-  }
+  /*val answers: Set<Int> = setOf(2, 3, 4, 2)*/
+  /*val answers = setOf(2, 3, 4, 2)*/
+  val answers = mutableSetOf(2, 3, 4, 2)
+  answers.add(5)
+  answers.remove(4)
+  println(answers)
+  println(answers.contains(3)) // true
 
+  val set1 = setOf(1, 3, 5, 8)
+  val set2 = setOf(3, 5, 8, 9)
+
+  println(set1.intersect(set2))
+  println(set1.union(set2))
+  println(set1.subtract(set2))
 }
