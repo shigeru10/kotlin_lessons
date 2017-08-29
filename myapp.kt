@@ -8,14 +8,26 @@ Hello world
 ➜  kotlin_lessons
 */
 
+// 例外処理
 
+class MyException(message: String): Throwable(message)
+
+fun div(a: Int, b: Int) {
+  try {
+    if (b < 0) {
+      throw MyException("not minus")
+    }
+    println(a / b)
+  } catch(e: ArithmeticException) {
+    println(e.message)
+  } catch(e: MyException) {
+    println(e.message)
+  } finally {
+    println("-- end --")
+  }
+}
 
 fun main(args: Array<String>) {
-  val prices = listOf(53.2, 48.9, 32.6)
-  prices
-    /*.map { n -> n * 1.08 } // 引数 -> 処理*/
-    .map { it * 1.08 } // 暗黙の引数
-    /*.filter { n -> n > 50 }*/
-    .filter { it > 50 }
-    .forEach { println(it) }
+  div(3, 0)
+  div(3, -3)
 }
