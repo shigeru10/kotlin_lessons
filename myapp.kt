@@ -8,21 +8,14 @@ Hello world
 ➜  kotlin_lessons
 */
 
-// Collection
 
-/*
-- List(Immutable/Mutable) -> 順番をもつデータの集合
-- Set(Immutable/Mutable)  -> 順番を持たない、重複しない集合
-- Map(Immutable/Mutable)  -> キーと値でデータを管理していく集合
-*/
 
 fun main(args: Array<String>) {
-  /*val users: Map<String, Int> = mapOf("a" to 40, "b" to 80)*/
-  /*val users = mapOf("a" to 40, "b" to 80)*/
-  val users = mutableMapOf("a" to 40, "b" to 80)
-  users["a"] = 60
-  println(users.size)
-  println(users.keys)
-  println(users.values)
-  println(users.entries)
+  val prices = listOf(53.2, 48.9, 32.6)
+  prices
+    /*.map { n -> n * 1.08 } // 引数 -> 処理*/
+    .map { it * 1.08 } // 暗黙の引数
+    /*.filter { n -> n > 50 }*/
+    .filter { it > 50 }
+    .forEach { println(it) }
 }
