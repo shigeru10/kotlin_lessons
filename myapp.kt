@@ -8,31 +8,20 @@ Hello world
 ➜  kotlin_lessons
 */
 
-// generics
-// 引数の型を決めなくて良い。汎用化できる。
+// data class
+// データを保持するだけのクラスにはdataをつける
 
-/*class MyInteger {
-  fun getThree(x: Int) {
-    println(x)
-    println(x)
-    println(x)
-  }
-}*/
-
-class MyData<T> {
-  fun getThree(x: T) {
-    println(x)
-    println(x)
-    println(x)
-  }
-}
+/*class Point(val x: Int, val y: Int)*/
+data class Point(val x: Int, val y: Int)
 
 fun main(args: Array<String>) {
-  /*val mi = MyInteger()
-  mi.getThree(55)*/
+  val p1 = Point(3, 5)
+  val p2 = p1.copy()
+  /*val p2 = Point(3, 5)*/
 
-  val i = MyData<Int>()
-  i.getThree(4)
-  val s = MyData<String>()
-  s.getThree("hi")
+  println(p1)
+  println(if (p1 == p2) "same" else "not same")
+
+  val (x,y) = p1
+  println("$x:$y")
 }
